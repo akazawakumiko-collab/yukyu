@@ -11,16 +11,16 @@ if "year" not in st.session_state:
     st.session_state.month = today.month
 if "reservations" not in st.session_state:
     # structure: { "A": {"YYYY-MM-DD": {"type":"AM/PM/全日", "comment": "..." } }, "B": {...}, "C": {...} }
-    st.session_state.reservations = {"石塚久美子": {}, "伊藤つぐみ": {}, "大城敬子": {}}
+    st.session_state.reservations = {"ISHI": {}, "TUG": {}, "OSHIR": {}}
 
 # 簡易表示用の氏名短縮マップ
-full_to_short = {"石塚久美子": "石塚", "伊藤つぐみ": "伊藤", "大城敬子": "大城"}
+full_to_short = {"ISHI": "ISH", "TUG": "TUG", "OSHI": "OSH"}
 
 if "selected_date" not in st.session_state:
     st.session_state.selected_date = None
 
 # ユーザー選択
-applicant = st.radio("申請者を選択", ["石塚久美子", "伊藤つぐみ", "大城敬子"])
+applicant = st.radio("申請者を選択", ["ISHI", "TUG", "OSHIR"])
 
 # 月ナビゲーション
 col_prev, col_mid, col_next = st.columns([1,6,1])
